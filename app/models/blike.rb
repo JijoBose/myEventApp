@@ -1,0 +1,2 @@
+class Blike < ApplicationRecord
+end
