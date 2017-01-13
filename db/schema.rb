@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113123402) do
+ActiveRecord::Schema.define(version: 20170113123717) do
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "description", limit: 65535
     t.string   "blogtag"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description", limit: 65535
+    t.float    "price",       limit: 24
+    t.datetime "evtdate"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
