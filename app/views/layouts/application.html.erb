@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyEventApp</title>
+    <title>Events</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+    <% if notice %>
+       <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+       <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
+    <%= render 'layouts/footer' %>
+
   </body>
 </html>
